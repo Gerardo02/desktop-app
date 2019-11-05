@@ -1,0 +1,48 @@
+body{
+    background-color: blueviolet;
+}
+.pixels-text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    color: yellow;
+}
+.top-container{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    background-color: darkred;
+}
+.link-container{
+    text-align: center;
+}
+.link1{
+    float: left;
+    margin-right: 25%;
+}
+.link2{
+    float: left;
+}
+.link3{
+    float: right;
+    margin-left: 25%;
+}
+.link4{
+    float: right;
+}
+@media only screen and (max-width: 1920px){
+    body{
+        background-color: blueviolet;
+    }
+}
+@media only screen and (max-width: 1366px){
+    body{
+        background-color: chartreuse;
+
+    }
+}
