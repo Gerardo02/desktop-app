@@ -18,23 +18,27 @@ body{
     margin: 0 auto;
     background-color: darkred;
 }
-.link-container{
-    text-align: center;
-}
-.link1{
-    float: left;
+
+.link{
     margin-right: 25%;
+    
 }
-.link2{
-    float: left;
+/*.link2{
+    position: relative;
+    left: 25%;
+    
 }
 .link3{
-    float: right;
-    margin-left: 25%;
+    position: relative;
+    left: 50%;
+    
 }
 .link4{
-    float: right;
-}
+    position: inherit;
+    left: 100%;
+    
+    
+}*/
 @media only screen and (max-width: 1920px){
     body{
         background-color: blueviolet;
@@ -45,4 +49,5 @@ body{
         background-color: chartreuse;
 
     }
+    
 }
