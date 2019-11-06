@@ -1,5 +1,7 @@
 body{
     background-color: blueviolet;
+    margin: 0;
+    font-family: sans-serif;
 }
 .pixels-text{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -12,33 +14,29 @@ body{
     right: 0;
     color: yellow;
 }
-.top-container{
+header{
     width: 100%;
-    height: 100px;
-    margin: 0 auto;
-    background-color: darkred;
+    background: rgb(216, 112, 147);
 }
-
-.link{
-    margin-right: 25%;
-    
+.link-container ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
 }
-/*.link2{
-    position: relative;
-    left: 25%;
-    
+.link-container li{
+    text-align: center;
+    flex-grow: 1;
 }
-.link3{
-    position: relative;
-    left: 50%;
-    
+.link-container li a{
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
 }
-.link4{
-    position: inherit;
-    left: 100%;
-    
-    
-}*/
+.link-container li :hover{
+    background: rgb(170, 85, 113);
+}
 @media only screen and (max-width: 1920px){
     body{
         background-color: blueviolet;
