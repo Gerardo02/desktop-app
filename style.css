@@ -1,8 +1,9 @@
 body{
-    background-color: blueviolet;
+    background-color: chartreuse;
     margin: 0;
     font-family: sans-serif;
 }
+
 .pixels-text{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 60px;
@@ -17,6 +18,17 @@ body{
 header{
     width: 100%;
     background: rgb(216, 112, 147);
+}
+
+#btn-menu{
+    display: none;
+}
+header label{
+    display: none;   
+}
+header label :hover{
+    cursor: pointer;
+    background: rgb(170, 85, 113);
 }
 .link-container ul{
     margin: 0;
@@ -37,15 +49,34 @@ header{
 .link-container li :hover{
     background: rgb(170, 85, 113);
 }
-@media only screen and (max-width: 1920px){
-    body{
-        background-color: blueviolet;
-    }
-}
-@media only screen and (max-width: 1366px){
-    body{
-        background-color: chartreuse;
 
+@media only screen and (max-width: 578px){
+    header label{
+        display: block;
+    }
+    header label img{
+        width: 28px;
+        height: 28px;
+        padding: 8px;
+        border-right: 1px solid #fff;
+        
+    }
+    .link-container{
+        position: absolute;
+        background: rgb(216, 112, 147);
+        width: 70%;
+        margin-left: -70%;
+        transition: all 0.5s;
+    }
+    .link-container ul{
+        flex-direction: column;
+    }
+    .link-container li{
+        text-align: left;
+    }
+    #btn-menu:checked ~ .link-container{
+        margin: 0;
+        
     }
     
 }
