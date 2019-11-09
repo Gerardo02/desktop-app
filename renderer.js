@@ -7,3 +7,9 @@ const getWidth = () =>{
 
 getWidth();
 window.addEventListener('resize', getWidth);
+const infoVacas = document.getElementById('info-input');
+const numVacas = document.getElementById('vacas')
+const vacas = 5;
+if(infoVacas === 'pene'){
+    numVacas.innerHTML = `chingas a tu puta madre`;
+}
