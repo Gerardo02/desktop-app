@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -10,10 +10,18 @@ let createWindow = () =>{
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    title: 'hola',
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+      contextIsolation: true,
+      preload: path.join(app.getAppPath(), 'preload.js')
+      
+    }  
   })
+  // Build menu from template
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
+  // Insert menu
+  Menu.setApplicationMenu(mainMenu)
+  
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
@@ -35,6 +43,39 @@ let createWindow = () =>{
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 
+// Create menu template
+const mainMenuTemplate = [
+  {
+    label: 'File',
+    submenu:[
+      {
+        label: 'hola'
+      },
+      {
+        label: 'Salir',
+        accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+        click(){
+          app.quit()
+        }
+      }
+    ]
+  }
+];
+mainMenuTemplate.push({
+  label: 'Dev tools',
+    submenu:[
+      {
+        label: 'Sacar dev tools',
+        accelerator: 'Ctrl+I',
+        click(item, focusedWindow){
+          focusedWindow.toggleDevTools();
+        }
+      },
+      {
+        role: 'reload'
+      }
+    ]
+})
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
