@@ -1,0 +1,102 @@
+.Captura{
+    top: 20%;
+    height: 300px;
+    width: 33.3%;
+    background-color: red;
+    position: absolute;
+    left: 0px;
+}
+
+.Inventario{
+    top: 20%;
+    left: 33.3%;
+    height: 300px;
+    width: 33.3%;
+    background-color: blue;
+    position: absolute;
+}
+.Historial{
+    top: 20%;
+    height: 300px;
+    left: 66.6%;
+    width: 33.4%;
+    background-color: black;
+    position: absolute;
+}
+.imagen_captura{
+    width: 200px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:10% ;
+
+}
+
+.imagen_ranch{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:10% ;
+
+}
+.imagen_historial{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:10% ;
+
+}
+
+.barra_busqueda{
+    background-color: black;
+    height: 10%;
+    width: 60%;
+   /* left: 10%;
+    right: 10%; */
+    position: absolute;
+    bottom: 0%;
+    opacity: 60%;
+    border-radius: 5px;
+}
+
+.botones{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.busqueda{
+    border: none;
+    border-radius: 20px;
+    display: inline-block;
+    height: 50px;
+    position: absolute;
+    
+}
+
+.numero_arete{
+    width: 40%;
+    left: 5%;
+    top: 15%;
+    bottom: 10%;
+}
+.raza{
+    width: 20%;
+    right: 50px;
+    top: 15%;
+    bottom: 10%;
+    left: 47%;
+}
+
+.search-btn{
+    width: 20%;
+    right: 50px;
+    top: 15%;
+    bottom: 10%;
+    left: 70%;
+}
+
