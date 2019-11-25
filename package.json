@@ -4,7 +4,9 @@
   "description": "Simple app",
   "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "asar pack YoutubeTutorial-win32-x64/resources/app YoutubeTutorial-win32-x64/resources/app.asar",
+    "build": "electron-packager . YoutubeTutorial"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/Gerardo02/desktop-app#readme",
   "devDependencies": {
-    "electron": "^7.0.1"
+    "asar": "^2.0.1",
+    "electron": "^7.0.1",
+    "electron-packager": "^14.1.1"
   }
 }
