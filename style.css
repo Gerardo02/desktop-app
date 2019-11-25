@@ -30,6 +30,34 @@ header label :hover{
     cursor: pointer;
     background: rgb(170, 85, 113);
 }
+header label{
+    display: block;
+}
+header label img{
+    width: 28px;
+    height: 28px;
+    padding: 8px;
+    border-right: 1px solid #fff;
+    
+}
+.link-container{
+    position: absolute;
+    background: rgb(216, 112, 147);
+    width: 70%;
+    margin-left: -70%;
+    transition: all 0.5s;
+}
+.link-container ul{
+    flex-direction: column;
+}
+.link-container li{
+    text-align: left;
+}
+#btn-menu:checked ~ .link-container{
+    margin: 0;
+    
+}
+
 .link-container ul{
     margin: 0;
     list-style: none;
@@ -37,7 +65,7 @@ header label :hover{
     display: flex;
 }
 .link-container li{
-    text-align: center;
+   
     flex-grow: 1;
 }
 .link-container li a{
