@@ -1,5 +1,6 @@
-const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
+const {app, BrowserWindow, Menu} = require('electron')
+
 const execSync = require('child_process').execSync;
 // sql connection
 const mysql = require('mysql');
