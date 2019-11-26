@@ -1,3 +1,4 @@
+/*
 // sql connection
 const mysql = require('mysql');
 const express = require('express');
@@ -23,7 +24,7 @@ app.listen('1450', () => {
 });
 
 
-
+const texto = document.getElementById('prueba');
 
 app.get('/', function(req, resp){
   connection.query('SELECT * FROM ganado', function(err, rows, fields) {
@@ -31,10 +32,13 @@ app.get('/', function(req, resp){
       console.log('error2');
     }else{
       console.log('succes');
+      //console.log(`El tipo es:${rows[0].tipo}`);
     };
-    //console.log(`El tipo es:${rows[1].tipo}`);
+    const type1 = rows[0].tipo;
+    console.log(type1);
   });
 })
 
+texto.innerText = type1;
 
-
+*/
