@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(88,23,19);
+    min-height: 100vh;
+    background-image: linear-gradient(45deg,#eb4d4b,rgb(49,20,22));
     margin: 0;
     font-family: sans-serif;
 }

@@ -1,6 +1,6 @@
 const path = require('path')
 const {app, BrowserWindow, Menu} = require('electron')
-
+/*
 const execSync = require('child_process').execSync;
 // sql connection
 const mysql = require('mysql');
@@ -28,169 +28,44 @@ app1.listen('1450', () => {
 
 
 // command
-if(process.versions !== 'darwin'){
-  const outputGan = execSync('start firefox localhost:1450/ganado', { encoding: 'utf-8' }); 
-  console.log('Output ganado was:\n', outputGan);
-  app1.get('/ganado', (req, resp) => {
-    connection.query('SELECT * FROM ganado', (err, rows, fields) => {
+if(process.platform !== 'darwin'){
+  const outputDatos = execSync('start firefox localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+  app1.get('/datos', (req, resp) => {
+    connection.query('SELECT * FROM datos', (err, rows, fields) => {
       if (err){
         throw err;
       }else{
-        console.log('succes ganado');
+        console.log('succes datos');
         //console.log(`El tipo es:${rows[0].tipo}`);
       };
-      resp.send('Conectado a la base de datos ganado');
-      const ganado = rows;
-      console.log(ganado);
+      resp.send('Conectado a la table datos');
+      const datos = rows;
+      console.log(datos);
     });
 
   })
-  const outputEmp = execSync('start firefox localhost:1450/empresas', { encoding: 'utf-8' });
-  console.log('Output empresas was:\n', outputEmp);
-  app1.get('/empresas', (req, resp) => {
-    connection.query('SELECT * FROM empresas', (err, rows, fields) => {
+  
+}else if(process.platform === 'darwin'){
+  const outputDatos = execSync('open chrome localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+  app1.get('/datos', (req, resp) => {
+    connection.query('SELECT * FROM datos', (err, rows, fields) => {
       if (err){
         throw err;
       }else{
-        console.log('succes empresas');
-
-      };
-      const empresas = rows;
-      console.log(empresas);
-      resp.send('Conectado a la base de datos empresas');
-    });
-
-  })
-  const outputDates = execSync('start firefox localhost:1450/fechas', { encoding: 'utf-8' });
-  console.log('Output fechas was:\n', outputDates);
-  app1.get('/fechas', (req, resp) => {
-    connection.query('SELECT * FROM fechas', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes fechas');
-
-      };
-      const fechas = rows;
-      console.log(fechas);
-      resp.send('Conectado a la base de datos fechas');
-    });
-
-  })
-  const outputPesos = execSync('start firefox localhost:1450/pesos', { encoding: 'utf-8' });
-  console.log('Output pesos was:\n', outputPesos);
-  app1.get('/pesos', (req, resp) => {
-    connection.query('SELECT * FROM pesos', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes pesos');
-
-      };
-      const pesos = rows;
-      console.log(pesos);
-      resp.send('Conectado a la base de datos pesos');
-    });
-
-  })
-  const outputVida = execSync('start firefox localhost:1450/vida', { encoding: 'utf-8' });
-  console.log('Output vida was:\n', outputVida);
-  app1.get('/vida', (req, resp) => {
-    connection.query('SELECT * FROM vida', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes vida');
-
-      };
-      const vida = rows;
-      console.log(vida);
-      resp.send('Conectado a la base de datos vida');
-    });
-  })
-}else if(process.versions === 'darwin'){
-  const outputGan = execSync('open chrome localhost:1450/ganado', { encoding: 'utf-8' }); 
-  console.log('Output ganado was:\n', outputGan);
-  app1.get('/ganado', (req, resp) => {
-    connection.query('SELECT * FROM ganado', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes ganado');
+        console.log('succes datos');
         //console.log(`El tipo es:${rows[0].tipo}`);
       };
-      resp.send('Conectado a la base de datos ganado');
-      const ganado = rows;
-      console.log(ganado);
+      resp.send('Conectado a la table datos');
+      const datos = rows;
+      console.log(datos);
     });
 
-  })
-  const outputEmp = execSync('open chrome localhost:1450/empresas', { encoding: 'utf-8' });
-  console.log('Output empresas was:\n', outputEmp);
-  app1.get('/empresas', (req, resp) => {
-    connection.query('SELECT * FROM empresas', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes empresas');
-
-      };
-      const empresas = rows;
-      console.log(empresas);
-      resp.send('Conectado a la base de datos empresas');
-    });
-
-  })
-  const outputDates = execSync('open chrome localhost:1450/fechas', { encoding: 'utf-8' });
-  console.log('Output fechas was:\n', outputDates);
-  app1.get('/fechas', (req, resp) => {
-    connection.query('SELECT * FROM fechas', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes fechas');
-
-      };
-      const fechas = rows;
-      console.log(fechas);
-      resp.send('Conectado a la base de datos fechas');
-    });
-
-  })
-  const outputPesos = execSync('open chrome localhost:1450/pesos', { encoding: 'utf-8' });
-  console.log('Output pesos was:\n', outputPesos);
-  app1.get('/pesos', (req, resp) => {
-    connection.query('SELECT * FROM pesos', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes pesos');
-
-      };
-      const pesos = rows;
-      console.log(pesos);
-      resp.send('Conectado a la base de datos pesos');
-    });
-
-  })
-  const outputVida = execSync('open chrome localhost:1450/vida', { encoding: 'utf-8' });
-  console.log('Output vida was:\n', outputVida);
-  app1.get('/vida', (req, resp) => {
-    connection.query('SELECT * FROM vida', (err, rows, fields) => {
-      if (err){
-        throw err;
-      }else{
-        console.log('succes vida');
-
-      };
-      const vida = rows;
-      console.log(vida);
-      resp.send('Conectado a la base de datos vida');
-    });
   })
 }
 
-
+*/
 
 
 // Keep a global reference of the window object, if you don't, the window will
