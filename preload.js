@@ -15,7 +15,7 @@ const execSync = require('child_process').execSync;
 const mysql = require('mysql');
 const express = require('express');
 const app1 = express();
-
+let datos;
 // Create connection
 connection = mysql.createConnection({
     host     : 'localhost',
@@ -49,7 +49,7 @@ if(process.platform !== 'darwin'){
         //console.log(`El tipo es:${rows[0].tipo}`);
       };
       resp.send('Conectado a la table datos');
-      const datos = rows;
+      datos = rows;
       console.log(datos);
     });
 
@@ -67,7 +67,7 @@ if(process.platform !== 'darwin'){
         //console.log(`El tipo es:${rows[0].tipo}`);
       };
       resp.send('Conectado a la table datos');
-      const datos = rows;
+      datos = rows;
       console.log(datos);
     });
 
