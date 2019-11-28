@@ -1,3 +1,4 @@
+
 const execSync = require('child_process').execSync;
 const mysql = require('mysql');
 const express = require('express');
@@ -26,7 +27,7 @@ const texto = document.getElementById('pruebabd');
 // command
 if(process.platform !== 'darwin'){
   const outputDatos = execSync('start firefox localhost:1450/datos', { encoding: 'utf-8' }); 
-  console.log('Output datos was:\n', outputDatos);
+  console.log('Output datos was:\n', outputDatos); 
   app1.get('/datos', (req, resp) => {
     connection.query('SELECT * FROM datos', (err, rows, fields) => {
       if (err){

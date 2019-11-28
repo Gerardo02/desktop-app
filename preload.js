@@ -1,5 +1,6 @@
-/*
 const execSync = require('child_process').execSync;
+/*
+
 const mysql = require('mysql');
 const express = require('express');
 const app1 = express();
@@ -63,3 +64,11 @@ if(process.platform !== 'darwin'){
 }
 
 */
+if(process.platform !== 'darwin'){
+  const outputDatos = execSync('start firefox localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+  
+}else if(process.platform === 'darwin'){
+  const outputDatos = execSync('open chrome localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+}

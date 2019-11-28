@@ -24,6 +24,7 @@
     "electron-packager": "^14.1.1"
   },
   "dependencies": {
+    "ajax": "0.0.4",
     "childprocess": "^2.0.2",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
