@@ -1,5 +1,6 @@
 const path = require('path')
 const {app, BrowserWindow, Menu} = require('electron')
+const url = require('url');
 /*
 const execSync = require('child_process').execSync;
 // sql connection
@@ -71,6 +72,7 @@ if(process.platform !== 'darwin'){
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let otherWindow
 
 let createWindow = () =>{
   // Create the browser window.
@@ -79,11 +81,20 @@ let createWindow = () =>{
     height: 600,
     title: 'hola',
     webPreferences: {
-      contextIsolation: true,
-      preload: path.join(app.getAppPath(), 'preload.js')
-      
-    }  
+      //preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
+    }
+    
   })
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    
+    protocol: 'file',
+    slashes: true
+    
+  }))
+  
+
   // Build menu from template
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
   // Insert menu
@@ -92,9 +103,6 @@ let createWindow = () =>{
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

@@ -1,9 +1,8 @@
-/*
-// sql connection
+const execSync = require('child_process').execSync;
 const mysql = require('mysql');
 const express = require('express');
-const app = express();
-
+const app1 = express();
+let datos;
 // Create connection
 connection = mysql.createConnection({
     host     : 'localhost',
@@ -19,31 +18,46 @@ connection.connect((err) => {
     console.log('Connected');
 });
 
-app.listen('1450', () => {
+app1.listen('1450', () => {
     console.log('inicializa servidor en puerto 1450');
 });
 
-
-const texto = document.getElementById('prueba');
-
-app.get('/', function(req, resp){
-  connection.query('SELECT * FROM ganado', function(err, rows, fields) {
-    if (err){
-      console.log('error2');
-    }else{
-      console.log('succes');
-      //console.log(`El tipo es:${rows[0].tipo}`);
-    };
-    const type1 = rows[0].tipo;
-    console.log(type1);
-  });
-})
-
-texto.innerText = type1;
-
-*/
+const texto = document.getElementById('pruebabd');
 // command
-const execSync = require('child_process').execSync;
-// import { execSync } from 'child_process';  // replace ^ if using ES modules
-const output = execSync('start firefox localhost:1450/cagada', { encoding: 'utf-8' });  // the default is 'buffer'
-console.log('Output was:\n', output);
+if(process.platform !== 'darwin'){
+  const outputDatos = execSync('start firefox localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+  app1.get('/datos', (req, resp) => {
+    connection.query('SELECT * FROM datos', (err, rows, fields) => {
+      if (err){
+        throw err;
+      }else{
+        console.log('succes datos');
+        //console.log(`El tipo es:${rows[0].tipo}`);
+      };
+      resp.send('Conectado a la table datos');
+      datos = rows;
+      texto.innerText = datos[0].predio;
+      console.log(datos);
+    });
+
+  })
+  
+}else if(process.platform === 'darwin'){
+  const outputDatos = execSync('open chrome localhost:1450/datos', { encoding: 'utf-8' }); 
+  console.log('Output datos was:\n', outputDatos);
+  app1.get('/datos', (req, resp) => {
+    connection.query('SELECT * FROM datos', (err, rows, fields) => {
+      if (err){
+        throw err;
+      }else{
+        console.log('succes datos');
+        //console.log(`El tipo es:${rows[0].tipo}`);
+      };
+      resp.send('Conectado a la table datos');
+      datos = rows;
+      console.log(datos);
+    });
+
+  })
+}
