@@ -27,6 +27,7 @@
     "ajax": "0.0.4",
     "childprocess": "^2.0.2",
     "express": "^4.17.1",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "node-cron": "^2.0.3"
   }
 }
