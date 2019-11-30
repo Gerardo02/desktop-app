@@ -5,13 +5,16 @@ const mysql = require('mysql');
 const express = require('express');
 const app1 = express();
 let datos;
+
 // Create connection
 connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '767482',
-    database: 'inventario_ganadero'
+    password : '633d5ca8e4',
+    database: 'inventario_ganadero',
+    
 });
+
 // connect
 connection.connect((err) => {
     if(err){
@@ -45,13 +48,15 @@ if(process.platform !== 'darwin'){
   })
   
 }else if(process.platform === 'darwin'){
-  const outputDatos = execSync('open chrome localhost:1450/datos', { encoding: 'utf-8' }); 
+  const outputDatos = execSync('open http://localhost:1450/datos', { encoding: 'utf-8' }); 
   console.log('Output datos was:\n', outputDatos);
   app1.get('/datos', (req, resp) => {
     connection.query('SELECT * FROM datos', (err, rows, fields) => {
       if (err){
         throw err;
-      }else{
+        console.log('succes datos');
+      }
+      else{
         console.log('succes datos');
         //console.log(`El tipo es:${rows[0].tipo}`);
       };

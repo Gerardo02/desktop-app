@@ -1,54 +1,86 @@
-.Captura{
-    top: 20%;
-    height: 300px;
-    width: 33.3%;
-    background-color: rgb(49,20,22);
+html{
+    background: url(images/Mesa\ de\ trabajo\ 1.png ) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    margin: 0px;
+    padding: 0px;
+  
+}
+.iconos{
+    right: 10%;
     position: absolute;
-    left: 0px;
+    background-color: rgb(134, 134, 134,.7);
+    height: 100%;
+   margin: auto;
+   padding: 0px;
+   top: 0px;
+   align-content: center;
+   width: 15%;
+   
+}
+
+.Captura{
+    top: 15%;
+    margin: 0px;
+   padding: 0px;
+    width: 100%;
+    background-color: rgb(134, 134, 134,.7);
+    height: 23.3%;
+    display: block  ;
+    position: absolute;
+    
 }
 
 .Inventario{
-    top: 20%;
-    left: 33.3%;
-    height: 300px;
-    width: 33.3%;
-    background-color: rgb(49,20,22);
+    width: 100%;
+    height: 23.3%;
+    top: 38.3333%;
+    margin: 0px;
+   padding: 0px;
+    background-color:  rgb(134, 134, 134,.7);
+    display: inline-block  ;
     position: absolute;
 }
 .Historial{
-    top: 20%;
-    height: 300px;
-    left: 66.6%;
-    width: 33.4%;
-    background-color: rgb(49,20,22);
+    width: 100%;
+    height: 23.3%;
+   top: 61.6333%;
+    margin: 0px;
+   padding: 0px;
+    background-color: rgb(134, 134, 134,.7);
+    display: block  ;
     position: absolute;
 }
 .imagen_captura{
-    width: 200px;
-    height: 150px;
+    height: 100%;
+    width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top:10% ;
+    
 
 }
 
 .imagen_ranch{
-    width: 150px;
-    height: 150px;
+    height: 100%;
+    width: auto;
+   
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top:10% ;
+    
 
 }
 .imagen_historial{
-    width: 150px;
-    height: 150px;
+    height: 100%;
+    width: auto;
+   
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top:10% ;
+    
 
 }
 
